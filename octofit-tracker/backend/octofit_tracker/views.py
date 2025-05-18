@@ -4,22 +4,24 @@ from rest_framework.response import Response
 from .serializers import UserSerializer, TeamSerializer, ActivitySerializer, LeaderboardSerializer, WorkoutSerializer
 from .models import User, Team, Activity, Leaderboard, Workout
 
-@api_view(['GET', 'POST'])
+# Set your Codespace URL here (update as needed)
+CODESPACE_URL = "https://special-computing-machine-69grp4qgwggphr75g-8000.app.github.dev/"
+LOCAL_URL = "http://localhost:8000/"
+
+@api_view(['GET'])
 def api_root(request, format=None):
-    # Replace with your actual Codespace name
-    codespace_url = 'https://[REPLACE-THIS-WITH-YOUR-CODESPACE-NAME]-8000.app.github.dev/'
-    localhost_url = 'http://localhost:8000/'
+    # Return both Codespace and localhost URLs for API endpoints
     return Response({
-        'users': codespace_url + 'api/users/?format=api',
-        'teams': codespace_url + 'api/teams/?format=api',
-        'activities': codespace_url + 'api/activities/?format=api',
-        'leaderboard': codespace_url + 'api/leaderboard/?format=api',
-        'workouts': codespace_url + 'api/workouts/?format=api',
-        'users_local': localhost_url + 'api/users/?format=api',
-        'teams_local': localhost_url + 'api/teams/?format=api',
-        'activities_local': localhost_url + 'api/activities/?format=api',
-        'leaderboard_local': localhost_url + 'api/leaderboard/?format=api',
-        'workouts_local': localhost_url + 'api/workouts/?format=api',
+        'users_codespace': CODESPACE_URL + 'api/users/?format=api',
+        'users_local': LOCAL_URL + 'api/users/?format=api',
+        'teams_codespace': CODESPACE_URL + 'api/teams/?format=api',
+        'teams_local': LOCAL_URL + 'api/teams/?format=api',
+        'activities_codespace': CODESPACE_URL + 'api/activities/?format=api',
+        'activities_local': LOCAL_URL + 'api/activities/?format=api',
+        'leaderboard_codespace': CODESPACE_URL + 'api/leaderboard/?format=api',
+        'leaderboard_local': LOCAL_URL + 'api/leaderboard/?format=api',
+        'workouts_codespace': CODESPACE_URL + 'api/workouts/?format=api',
+        'workouts_local': LOCAL_URL + 'api/workouts/?format=api',
     })
 
 class UserViewSet(viewsets.ModelViewSet):
