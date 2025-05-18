@@ -1,38 +1,110 @@
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+  margin: 0;
+  padding: 0;
+  color: #222b45;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Navigation styles */
+.navbar {
+  background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%);
+  box-shadow: 0 4px 12px rgba(30, 60, 114, 0.15);
+}
+.navbar-brand, .navbar-nav .nav-link {
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+.navbar-brand img {
+  height: 40px;
+  margin-right: 12px;
+  vertical-align: middle;
+}
+.navbar-nav .nav-link:hover {
+  color: #ffd700 !important;
+  text-decoration: underline;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Headings */
+h1, .card-title {
+  color: #1e3c72;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Table styles */
+.table {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(30, 60, 114, 0.08);
+}
+.table th {
+  background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%);
+  color: #fff;
+  font-size: 1.1rem;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f6f9fc;
+}
+.table-bordered td, .table-bordered th {
+  border: 1px solid #b6c1d6;
 }
 
-.App-link {
-  color: #61dafb;
+/* Button styles */
+.btn, button {
+  background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1.2rem;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+.btn:hover, button:hover {
+  background: linear-gradient(90deg, #2a5298 0%, #1e3c72 100%);
+  color: #ffd700;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+/* Card styles */
+.card {
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(30, 60, 114, 0.10);
+  margin-bottom: 2rem;
+}
+.card-title {
+  color: #2a5298;
+}
+
+/* Link styles */
+a, .App-link {
+  color: #2a5298;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+a:hover, .App-link:hover {
+  color: #ffd700;
+  text-decoration: underline;
+}
+
+/* Favicon and logo */
+.octofit-logo {
+  height: 40px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .navbar-brand span {
+    display: none;
   }
 }
